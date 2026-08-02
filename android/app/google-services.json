@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "540561315487",
+    "project_id": "miss-you-ai-7a408",
+    "storage_bucket": "miss-you-ai-7a408.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540561315487:android:60ceaf186ca29a7d1874aa",
+        "android_client_info": {
+          "package_name": "com.example.miss_you_ai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmeYm4OcVtMqj8lqncfVClJ2SV-OmWOpY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
