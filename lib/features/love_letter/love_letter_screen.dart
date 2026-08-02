@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../core/services/ai_service.dart';
 import '../../core/theme/app_colors.dart';
 
@@ -27,6 +28,16 @@ class _LoveLetterScreenState extends State<LoveLetterScreen> {
       _generatedText = null;
     });
     try {
+      // Attach the current Firebase login token so the backend can
+      // verify who's calling -- without this every AI request is
+      // rejected as unauthenticated ("Session expired").
+      final user = FirebaseAuth.instance.currentUser;
+      if (user == null) {
+        throw Exception('You need to be logged in to use this.');
+      }
+      final idToken = await user.getIdToken();
+      AIService.instance.setAuthToken(idToken!);
+
       final text = await AIService.instance.generateLoveLetter(
         mood: _selectedMood,
         language: _selectedLanguage,

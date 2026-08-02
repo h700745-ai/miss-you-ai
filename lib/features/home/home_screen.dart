@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../../core/theme/app_colors.dart';
+import '../../core/services/auth_service.dart';
 import '../love_letter/love_letter_screen.dart';
 
 class HomeFeature {
@@ -32,7 +33,8 @@ class HomeScreen extends StatelessWidget {
           title: 'Voice Message',
           icon: Icons.graphic_eq,
           color: AppColors.secondary,
-          builder: (_) => const _ComingSoonScreen(title: 'Voice Message Generator'),
+          builder: (_) =>
+              const _ComingSoonScreen(title: 'Voice Message Generator'),
         ),
         HomeFeature(
           title: 'Date Planner',
@@ -44,7 +46,8 @@ class HomeScreen extends StatelessWidget {
           title: 'Relationship Coach',
           icon: Icons.forum_outlined,
           color: AppColors.moodCalm,
-          builder: (_) => const _ComingSoonScreen(title: 'Relationship AI Chat'),
+          builder: (_) =>
+              const _ComingSoonScreen(title: 'Relationship AI Chat'),
         ),
         HomeFeature(
           title: 'Memory Timeline',
@@ -81,9 +84,17 @@ class HomeScreen extends StatelessWidget {
             expandedHeight: 220,
             pinned: true,
             backgroundColor: AppColors.primary,
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.logout, color: Colors.white),
+                tooltip: 'Log out',
+                onPressed: () => AuthService.instance.signOut(),
+              ),
+            ],
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
-                decoration: const BoxDecoration(gradient: AppColors.loveGradient),
+                decoration:
+                    const BoxDecoration(gradient: AppColors.loveGradient),
                 child: SafeArea(child: _buildCountdownHeader()),
               ),
             ),
@@ -154,7 +165,8 @@ class _CountdownChip extends StatelessWidget {
       ),
       child: Text(
         '$label: $value days',
-        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+        style:
+            const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
       ),
     );
   }
@@ -192,7 +204,8 @@ class _FeatureCard extends StatelessWidget {
               ),
               Text(
                 feature.title,
-                style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
+                style:
+                    const TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
               ),
             ],
           ),
