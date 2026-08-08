@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/services/auth_service.dart';
 import '../love_letter/love_letter_screen.dart';
+import '../voice_message/voice_message_screen.dart';
 
 class HomeFeature {
   final String title;
@@ -33,8 +34,7 @@ class HomeScreen extends StatelessWidget {
           title: 'Voice Message',
           icon: Icons.graphic_eq,
           color: AppColors.secondary,
-          builder: (_) =>
-              const _ComingSoonScreen(title: 'Voice Message Generator'),
+          builder: (_) => const VoiceMessageEntry(),
         ),
         HomeFeature(
           title: 'Date Planner',
