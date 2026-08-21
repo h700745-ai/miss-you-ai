@@ -4,6 +4,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/services/auth_service.dart';
 import '../love_letter/love_letter_screen.dart';
 import '../voice_message/voice_message_screen.dart';
+import '../love_meter/love_meter_screen.dart';
 
 class HomeFeature {
   final String title;
@@ -59,7 +60,7 @@ class HomeScreen extends StatelessWidget {
           title: 'Love Meter',
           icon: Icons.favorite_border,
           color: AppColors.error,
-          builder: (_) => const _ComingSoonScreen(title: 'Love Meter'),
+          builder: (_) => const LoveMeterEntry(),
         ),
         HomeFeature(
           title: 'Daily Surprise',
