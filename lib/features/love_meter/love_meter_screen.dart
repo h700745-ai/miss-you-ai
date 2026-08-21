@@ -35,7 +35,7 @@ class _LoveMeterScreenState extends State<LoveMeterScreen>
         .collection('couples')
         .doc(widget.coupleId)
         .get();
-    final members = List<String>.from(coupleDoc.data()?['members'] ?? []);
+    final members = List<String>.from(coupleDoc.data()?['membersUids'] ?? []);
     return members.firstWhere((id) => id != myUid, orElse: () => '');
   }
 
