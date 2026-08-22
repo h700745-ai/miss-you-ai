@@ -5,6 +5,7 @@ import '../../core/services/auth_service.dart';
 import '../love_letter/love_letter_screen.dart';
 import '../voice_message/voice_message_screen.dart';
 import '../love_meter/love_meter_screen.dart';
+import '../vault/vault_screen.dart';
 
 class HomeFeature {
   final String title;
@@ -72,7 +73,7 @@ class HomeScreen extends StatelessWidget {
           title: 'Private Vault',
           icon: Icons.lock_outline,
           color: AppColors.textSecondaryDark,
-          builder: (_) => const _ComingSoonScreen(title: 'Private Vault'),
+          builder: (_) => const VaultScreen(),
         ),
       ];
 
